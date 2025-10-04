@@ -28,24 +28,24 @@ This project focuses on *evaluating and comparing the predictive performance* of
 
 
 ###  2. Dataset Characteristics
-- *Total Patients:* 5,585 (3,381 alive, 2,204 deceased)  
-- *Age Range:* Pediatric population (0–14 years), relatively uniform distribution  
-- *Outcome Distribution:* 60.5% survivors, 39.5% non-survivors (moderate imbalance)
+- *Total Patients:* 5,585 (3,381 alive, 2,204 deceased).  
+- *Age Range:* Pediatric population (0–14 years), relatively uniform distribution.  
+- *Outcome Distribution:* 60.5% survivors, 39.5% non-survivors (moderate imbalance).
 
 *Key Clinical Variables:*
-- Genetic factors: Family inheritance patterns, maternal genetic markers  
-- Clinical history: Previous pregnancies, blood cell counts, genetic disorder types  
+- Genetic factors: Family inheritance patterns, maternal genetic markers.  
+- Clinical history: Previous pregnancies, blood cell counts, genetic disorder types.  
 
 
 
 ###  3. Critical Clinical Insights
 
 *Genetic Risk Factors*
-- *Maternal Genetic History:* Strong predictor – higher mortality (60% vs 40% survival)  
-- *Paternal Inheritance:* Less discriminative  
-- *Blood Cell Count:* Minimal impact (median ~4.9 mcl)  
-- *Mitochondrial Disorders:* Associated with more severe outcomes  
-- *Multifactorial Disorders:* Lower prevalence; possible diagnostic underreporting  
+- *Maternal Genetic History:* Strong predictor – higher mortality (60% vs 40% survival).  
+- *Paternal Inheritance:* Less discriminative.
+- *Blood Cell Count:* Minimal impact (median ~4.9 mcl).  
+- *Mitochondrial Disorders:* Associated with more severe outcomes.  
+- *Multifactorial Disorders:* Lower prevalence; possible diagnostic underreporting.  
 
 *Age-Related Survival Patterns*
 - Infants: 38% survival  
@@ -56,22 +56,22 @@ This project focuses on *evaluating and comparing the predictive performance* of
 ##  Model Evaluation and Justification
 
 ###  *Decision Tree – Optimal Model*
-- *Highest F1-weighted score (0.5151)* across cross-validation  
-- *Handles minority class better* (recall = 0.39 for deceased patients)  
-- *Clinically interpretable:* Decision rules and feature importance are transparent  
-- *Balanced performance* without over-conservatism seen in SVM or Random Forest  
+- *Highest F1-weighted score (0.5151)* across cross-validation.  
+- *Handles minority class better* (recall = 0.39 for deceased patients).  
+- *Clinically interpretable:* Decision rules and feature importance are transparent.  
+- *Balanced performance* without over-conservatism seen in SVM or Random Forest.  
 
 ###  Why Not the Alternatives?
 *SVM*
-- Lowest cross-validation performance  
-- Extremely poor recall for deceased patients (1%)  
-- “Black-box” model → poor interpretability  
-- Risky for clinical use due to missed high-risk cases  
+- Lowest cross-validation performance.  
+- Extremely poor recall for deceased patients (1%).  
+- “Black-box” model → poor interpretability.  
+- Risky for clinical use due to missed high-risk cases.  
 
 *Random Forest*
-- Moderate results, high computational cost  
-- Low recall for minority class (5%)  
-- Less interpretable and unnecessarily complex  
+- Moderate results, high computational cost.  
+- Low recall for minority class (5%).  
+- Less interpretable and unnecessarily complex.  
 
 
 ##  Recommendations for Future Work
@@ -96,35 +96,35 @@ Based on the findings of this analysis, the following improvements are *proposed
 ##  Limitations
 
 ### *Dataset Constraints*
-- ROC AUC ≈ 0.5 → weak feature discriminability  
-- Missing key clinical context (e.g., comorbidities, treatments, progression)  
-- Single-institution data → limited generalizability  
-- Possible selection and demographic bias  
+- ROC AUC ≈ 0.5 → weak feature discriminability.  
+- Missing key clinical context (e.g., comorbidities, treatments, progression).  
+- Single-institution data → limited generalizability.  
+- Possible selection and demographic bias.  
 
 ### *Model Limitations*
-- Decision Tree prone to overfitting and instability  
-- All models struggle with class imbalance  
-- Retrospective design → no causal inference  
-- Binary outcomes (survival/death) lack nuanced patient trajectories  
+- Decision Tree prone to overfitting and instability.  
+- All models struggle with class imbalance.  
+- Retrospective design → no causal inference.  
+- Binary outcomes (survival/death) lack nuanced patient trajectories.  
 
 
 ##  Clinical Implementation Recommendations
 
 ### *Deployment Strategy*
-1. *Phase 1:* Pilot testing with decision-support alerts  
-2. *Phase 2:* Integration with hospital risk protocols  
-3. *Phase 3:* Full deployment with continuous model retraining  
+1. *Phase 1:* Pilot testing with decision-support alerts.  
+2. *Phase 2:* Integration with hospital risk protocols.  
+3. *Phase 3:* Full deployment with continuous model retraining.  
 
 *Risk Mitigation:*
-- Always maintain *human oversight*  
-- Provide *confidence intervals* for predictions  
-- Regularly *retrain* with new data  
+- Always maintain *human oversight*.  
+- Provide *confidence intervals* for predictions.  
+- Regularly *retrain* with new data.  
 
 *Success Metrics*
-- Improved early detection of high-risk patients  
-- Reduction in mortality rates  
-- Model performance stability on new data  
-- Clinician adoption and satisfaction  
+- Improved early detection of high-risk patients.  
+- Reduction in mortality rates.  
+- Model performance stability on new data.  
+- Clinician adoption and satisfaction.  
 
 
 
@@ -138,14 +138,13 @@ However, *dataset limitations* — particularly weak feature discriminability re
 Future work should prioritize *data enrichment, **feature engineering, and **external validation* to achieve clinically meaningful results.
 
 *Recommended Next Steps:*
-1. Deploy Decision Tree with SMOTE and ensemble improvements  
-2. Expand data collection and feature design  
-3. Validate externally before clinical integration  
+1. Deploy Decision Tree with SMOTE and ensemble improvements.  
+2. Expand data collection and feature design.  
+3. Validate externally before clinical integration.  
 
-*Target Performance:*  
-Achieve F1-weighted > 0.65 and ROC AUC > 0.70  while maintaining model interpretability and clinical reliability  
 
----
+
+
 
 ##  Author
 *Oluwatofunmi Fak-Adeniyi*  
